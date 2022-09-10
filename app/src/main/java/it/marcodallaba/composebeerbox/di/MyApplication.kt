@@ -14,12 +14,10 @@
  * limitations under the License.
  */
 
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
-rootProject.name = "compose-beer-box"
-include(":app")
+package it.marcodallaba.composebeerbox.di
+
+import dagger.hilt.android.HiltAndroidApp
+import it.marcodallaba.composebeerbox.BaseApplication
+
+@HiltAndroidApp
+open class MyApplication: BaseApplication()

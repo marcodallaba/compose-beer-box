@@ -14,12 +14,8 @@
  * limitations under the License.
  */
 
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
-rootProject.name = "compose-beer-box"
-include(":app")
+package it.marcodallaba.composebeerbox
+
+import android.app.Application
+
+open class BaseApplication: Application()

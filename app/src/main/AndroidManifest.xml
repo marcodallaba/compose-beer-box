@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Copyright 2021 Marco Cattaneo
+  ~ Copyright 2022 Marco Dalla Ba'
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -16,18 +16,18 @@
   -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="dev.marcocattaneo.androidcomposetemplate">
+    package="it.marcodallaba.composebeerbox">
 
     <application
         android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
-        android:name=".di.MyApplication"
+        android:name="it.marcodallaba.composebeerbox.di.MyApplication"
         android:supportsRtl="true"
         android:theme="@style/Theme.Androidcomposetemplate">
         <activity
-            android:name=".MainActivity"
+            android:name="it.marcodallaba.composebeerbox.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Androidcomposetemplate.NoActionBar">

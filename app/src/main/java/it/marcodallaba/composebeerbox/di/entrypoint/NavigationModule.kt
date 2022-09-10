@@ -14,12 +14,14 @@
  * limitations under the License.
  */
 
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
-    }
+package it.marcodallaba.composebeerbox.di.entrypoint
+
+import dagger.hilt.EntryPoint
+import dagger.hilt.InstallIn
+import it.marcodallaba.composebeerbox.di.component.ComposableComponent
+
+@InstallIn(ComposableComponent::class)
+@EntryPoint
+interface ComposableEntryPoint {
+
 }
-rootProject.name = "compose-beer-box"
-include(":app")

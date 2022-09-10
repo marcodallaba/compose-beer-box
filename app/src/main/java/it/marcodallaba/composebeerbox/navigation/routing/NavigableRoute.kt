@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
-    }
+package it.marcodallaba.composebeerbox.navigation.routing
+
+interface NavigableRoute<R: ScreenRoute> {
+
+    val screenRoute: R
+
+    val path: String
+
 }
-rootProject.name = "compose-beer-box"
-include(":app")

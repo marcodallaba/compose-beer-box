@@ -14,12 +14,9 @@
  * limitations under the License.
  */
 
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
-rootProject.name = "compose-beer-box"
-include(":app")
+package it.marcodallaba.composebeerbox.di.scope
+
+import javax.inject.Scope
+
+@Scope
+annotation class ComposableScope

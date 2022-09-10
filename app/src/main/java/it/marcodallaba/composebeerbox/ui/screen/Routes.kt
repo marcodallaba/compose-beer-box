@@ -14,12 +14,21 @@
  * limitations under the License.
  */
 
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
-    }
+package it.marcodallaba.composebeerbox.ui.screen
+
+import androidx.navigation.NavType
+import it.marcodallaba.composebeerbox.navigation.routing.ScreenRoute
+
+object Routes {
+
+    object Login : ScreenRoute(
+        routeDefinition = Definition("login")
+    )
+
+    object Dashboard : ScreenRoute(
+        routeDefinition = Definition("dashboard", argumentKeys = listOf(
+            "username" to { type = NavType.StringType; optional = false }
+        ))
+    )
+
 }
-rootProject.name = "compose-beer-box"
-include(":app")

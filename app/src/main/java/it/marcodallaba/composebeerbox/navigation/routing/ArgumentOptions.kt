@@ -14,12 +14,16 @@
  * limitations under the License.
  */
 
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
-rootProject.name = "compose-beer-box"
-include(":app")
+package it.marcodallaba.composebeerbox.navigation.routing
+
+import androidx.navigation.NavType
+
+/**
+ * Arguments Options specify for the argument keys used on the Screen Routes
+ * @param type argument type
+ * @param optional true if argument is optional
+ */
+class ArgumentOptions(
+    var type: NavType<*> = NavType.StringType,
+    var optional: Boolean = false
+)
