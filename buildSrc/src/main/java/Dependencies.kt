@@ -15,12 +15,14 @@
  */
 
 object Versions {
-    const val COMPOSE = "1.2.0"
-    const val COMPOSE_NAVIGATION = "2.5.1"
+    const val COMPOSE_COMPILER = "1.3.1"
+    const val COMPOSE = "1.2.1"
+    const val COMPOSE_NAVIGATION = "2.5.2"
     const val COMPOSE_HILT_NAVIGATION = "1.0.0"
-    const val ACTIVITY = "1.5.0"
-    const val KOTLIN = "1.7.0"
-    const val HILT = "2.42"
+    const val ACTIVITY = "1.5.1"
+    const val KOTLIN = "1.7.10"
+    const val HILT = "2.43.2"
+    const val VERSIONS = "0.42.0"
 }
 
 object Sdk {
@@ -49,7 +51,7 @@ object HiltLibs {
 
 object AndroidXLibs {
     const val APP_COMPACT= "androidx.appcompat:appcompat:${Versions.ACTIVITY}"
-    const val CORE = "androidx.core:core-ktx:1.7.0"
+    const val CORE = "androidx.core:core-ktx:1.9.0"
 }
 
 object AndroidXTestLibs {
