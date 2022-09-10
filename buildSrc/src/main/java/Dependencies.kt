@@ -28,6 +28,7 @@ object Versions {
     const val RETROFIT = "2.9.0"
     const val PAGING = "3.1.1"
     const val PAGING_COMPOSE = "1.0.0-alpha16"
+    const val COIL = "2.2.1"
 }
 
 object Sdk {
@@ -69,6 +70,10 @@ object RoomLibs {
 object Paging {
     const val PAGING_RUNTIME = "androidx.paging:paging-runtime:${Versions.PAGING}"
     const val PAGING_COMPOSE = "androidx.paging:paging-compose:${Versions.PAGING_COMPOSE}"
+}
+
+object Coil {
+    const val COIL_COMPOSE = "io.coil-kt:coil-compose:${Versions.COIL}"
 }
 
 object AndroidXLibs {

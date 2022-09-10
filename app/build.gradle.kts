@@ -97,6 +97,8 @@ dependencies {
     implementation(Paging.PAGING_RUNTIME)
     implementation(Paging.PAGING_COMPOSE)
 
+    implementation(Coil.COIL_COMPOSE)
+
     debugImplementation(ComposeLibs.TOOLING)
     debugImplementation(ComposeLibs.TOOLING_PREVIEW)
 }
