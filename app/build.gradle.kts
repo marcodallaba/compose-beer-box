@@ -95,6 +95,7 @@ dependencies {
     kapt(RoomLibs.ROOM_COMPILER)
 
     implementation(Paging.PAGING_RUNTIME)
+    implementation(Paging.PAGING_COMPOSE)
 
     debugImplementation(ComposeLibs.TOOLING)
     debugImplementation(ComposeLibs.TOOLING_PREVIEW)

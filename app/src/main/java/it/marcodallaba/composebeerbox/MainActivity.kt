@@ -27,7 +27,7 @@ import it.marcodallaba.composebeerbox.navigation.NavigationComponent
 import it.marcodallaba.composebeerbox.navigation.NavigationControllerImpl
 import it.marcodallaba.composebeerbox.navigation.composable
 import it.marcodallaba.composebeerbox.ui.screen.Routes
-import it.marcodallaba.composebeerbox.ui.screen.beers.BeersListScreen
+import it.marcodallaba.composebeerbox.ui.screen.beers.BeersScreen
 import it.marcodallaba.composebeerbox.ui.screen.beers.BeersViewModel
 import it.marcodallaba.composebeerbox.ui.theme.AndroidcomposetemplateTheme
 
@@ -49,7 +49,7 @@ class MainActivity : ComponentActivity() {
                             route = Routes.BeersList,
                             navigationController = controller
                         ) { _, vm ->
-                            BeersListScreen(vm)
+                            BeersScreen(vm)
                         }
 
                     }

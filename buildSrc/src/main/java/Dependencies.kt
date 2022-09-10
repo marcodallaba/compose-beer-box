@@ -27,7 +27,7 @@ object Versions {
     const val LOGGING_INTERCEPTOR = "4.9.3"
     const val RETROFIT = "2.9.0"
     const val PAGING = "3.1.1"
-
+    const val PAGING_COMPOSE = "1.0.0-alpha16"
 }
 
 object Sdk {
@@ -68,6 +68,7 @@ object RoomLibs {
 
 object Paging {
     const val PAGING_RUNTIME = "androidx.paging:paging-runtime:${Versions.PAGING}"
+    const val PAGING_COMPOSE = "androidx.paging:paging-compose:${Versions.PAGING_COMPOSE}"
 }
 
 object AndroidXLibs {
