@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package it.marcodallaba.composebeerbox.di.scope
+package it.marcodallaba.composebeerbox.di.qualifier
 
 import javax.inject.Scope
 

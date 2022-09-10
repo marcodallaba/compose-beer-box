@@ -86,6 +86,16 @@ dependencies {
     implementation(HiltLibs.ANDROID)
     kapt(HiltLibs.ANDROID_COMPILER)
 
+    implementation(RetrofitLibs.LOGGING_INTERCEPTOR)
+    implementation(RetrofitLibs.RETROFIT)
+    implementation(RetrofitLibs.CONVERTER_GSON)
+
+    implementation(RoomLibs.ROOM_KTX)
+    implementation(RoomLibs.ROOM_RUNTIME)
+    kapt(RoomLibs.ROOM_COMPILER)
+
+    implementation(Paging.PAGING_RUNTIME)
+
     debugImplementation(ComposeLibs.TOOLING)
     debugImplementation(ComposeLibs.TOOLING_PREVIEW)
 }

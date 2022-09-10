@@ -20,7 +20,7 @@ import dagger.hilt.DefineComponent
 import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ActivityComponent
-import it.marcodallaba.composebeerbox.di.scope.ComposableScope
+import it.marcodallaba.composebeerbox.di.qualifier.ComposableScope
 
 @ComposableScope
 @DefineComponent(parent = ActivityComponent::class)

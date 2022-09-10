@@ -23,6 +23,11 @@ object Versions {
     const val KOTLIN = "1.7.10"
     const val HILT = "2.43.2"
     const val VERSIONS = "0.42.0"
+    const val ROOM = "2.4.3"
+    const val LOGGING_INTERCEPTOR = "4.9.3"
+    const val RETROFIT = "2.9.0"
+    const val PAGING = "3.1.1"
+
 }
 
 object Sdk {
@@ -47,6 +52,22 @@ object HiltLibs {
     const val CORE = "com.google.dagger:hilt-core:${Versions.HILT}"
     const val COMPILER = "com.google.dagger:hilt-compiler:${Versions.HILT}"
     const val ANDROID_COMPILER = "com.google.dagger:hilt-android-compiler:${Versions.HILT}"
+}
+
+object RetrofitLibs {
+    const val LOGGING_INTERCEPTOR = "com.squareup.okhttp3:logging-interceptor:${Versions.LOGGING_INTERCEPTOR}"
+    const val RETROFIT = "com.squareup.retrofit2:retrofit:${Versions.RETROFIT}"
+    const val CONVERTER_GSON = "com.squareup.retrofit2:converter-gson:${Versions.RETROFIT}"
+}
+
+object RoomLibs {
+    const val ROOM_KTX = "androidx.room:room-ktx:${Versions.ROOM}"
+    const val ROOM_RUNTIME = "androidx.room:room-runtime:${Versions.ROOM}"
+    const val ROOM_COMPILER = "androidx.room:room-compiler:${Versions.ROOM}"
+}
+
+object Paging {
+    const val PAGING_RUNTIME = "androidx.paging:paging-runtime:${Versions.PAGING}"
 }
 
 object AndroidXLibs {

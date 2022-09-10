@@ -27,10 +27,8 @@ import it.marcodallaba.composebeerbox.navigation.NavigationComponent
 import it.marcodallaba.composebeerbox.navigation.NavigationControllerImpl
 import it.marcodallaba.composebeerbox.navigation.composable
 import it.marcodallaba.composebeerbox.ui.screen.Routes
-import it.marcodallaba.composebeerbox.ui.screen.dashboard.DashboardScreen
-import it.marcodallaba.composebeerbox.ui.screen.dashboard.DashboardViewModel
-import it.marcodallaba.composebeerbox.ui.screen.login.LoginScreen
-import it.marcodallaba.composebeerbox.ui.screen.login.LoginViewModel
+import it.marcodallaba.composebeerbox.ui.screen.beers.BeersListScreen
+import it.marcodallaba.composebeerbox.ui.screen.beers.BeersViewModel
 import it.marcodallaba.composebeerbox.ui.theme.AndroidcomposetemplateTheme
 
 @AndroidEntryPoint
@@ -43,23 +41,17 @@ class MainActivity : ComponentActivity() {
             AndroidcomposetemplateTheme {
                 Surface(color = MaterialTheme.colors.background) {
                     NavigationComponent(
-                        startRoute = Routes.Login,
+                        startRoute = Routes.BeersList,
                         navigationController = controller
                     ) {
 
-                        composable<LoginViewModel>(
-                            route = Routes.Login,
+                        composable<BeersViewModel>(
+                            route = Routes.BeersList,
                             navigationController = controller
                         ) { _, vm ->
-                            LoginScreen(vm)
+                            BeersListScreen(vm)
                         }
 
-                        composable<DashboardViewModel>(
-                            route = Routes.Dashboard,
-                            navigationController = controller
-                        ) { _, vm ->
-                            DashboardScreen(vm)
-                        }
                     }
                 }
             }
