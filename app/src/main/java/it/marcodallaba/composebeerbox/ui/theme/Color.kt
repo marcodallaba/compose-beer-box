@@ -18,7 +18,9 @@ package it.marcodallaba.composebeerbox.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Purple200 = Color(0xFFBB86FC)
-val Purple500 = Color(0xFF6200EE)
-val Purple700 = Color(0xFF3700B3)
-val Teal200 = Color(0xFF03DAC5)
+val Primary = Color(0xFF0E181C)
+val PrimaryLight = Color(0xFF1C262B)
+val PrimaryDark = Color(0xFF0C1418)
+val Accent = Color(0xFFF2B14E)
+val DividerColor = Color(0xFF47484A)
+val DefaultTextColor = Color(0xFF808080)

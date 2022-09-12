@@ -1,16 +1,17 @@
 package it.marcodallaba.composebeerbox.ui.screen.beers
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -21,6 +22,8 @@ import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import it.marcodallaba.composebeerbox.R
 import it.marcodallaba.composebeerbox.data.Beer
+import it.marcodallaba.composebeerbox.ui.theme.DefaultTextColor
+import it.marcodallaba.composebeerbox.ui.theme.DividerColor
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 
@@ -30,17 +33,24 @@ import kotlinx.coroutines.launch
 fun BeersScreen(
     beersViewModel: BeersViewModel
 ) {
-    val bottomSheetState = rememberModalBottomSheetState(ModalBottomSheetValue.Hidden)
+    val bottomSheetState =
+        rememberModalBottomSheetState(ModalBottomSheetValue.Hidden, skipHalfExpanded = true)
     val selectedBeerState: MutableState<Beer> =
         remember { mutableStateOf(Beer(0, "", "", "", "", 0f)) }
 
     ModalBottomSheetLayout(
         sheetState = bottomSheetState,
         sheetContent = {
-            Column(Modifier.fillMaxWidth()) {
+            Column(
+                Modifier
+                    .fillMaxWidth()
+            ) {
                 BottomSheetLayoutContent(selectedBeerState.value)
             }
-        }) {
+        },
+        sheetShape = RoundedCornerShape(12.dp),
+        sheetBackgroundColor = MaterialTheme.colors.primary
+    ) {
         BeersList(beersViewModel.getBeers(), bottomSheetState, selectedBeerState)
     }
 }
@@ -53,11 +63,18 @@ fun BeersList(
     selectedBeerState: MutableState<Beer>
 ) {
     val lazyPagingItems = flow.collectAsLazyPagingItems()
-    LazyColumn(modifier = Modifier.fillMaxWidth()) {
+    LazyColumn(
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(MaterialTheme.colors.primary)
+    ) {
         items(lazyPagingItems.itemCount) { index ->
             lazyPagingItems[index]?.let {
                 BeerEntry(beer = it, modalBottomSheetState, selectedBeerState)
-                Divider(color = Color.Black, modifier = Modifier.padding(start = 8.dp, end = 8.dp))
+                Divider(
+                    color = DividerColor,
+                    modifier = Modifier.padding(start = 16.dp, end = 16.dp)
+                )
             }
         }
     }
@@ -90,18 +107,26 @@ fun BeerEntry(
         )
         Column(modifier = Modifier.padding(start = 16.dp, end = 24.dp)) {
             with(beer) {
-                Text(name)
+                Text(name, color = Color.White)
                 tagLine?.let {
                     Text(
                         text = it,
                         maxLines = 1,
-                        modifier = Modifier.padding(top = 8.dp, bottom = 8.dp)
+                        modifier = Modifier.padding(top = 8.dp, bottom = 8.dp),
+                        color = DefaultTextColor
                     )
                 }
-                description?.let { Text(it, maxLines = 2, modifier = Modifier.padding(top = 8.dp)) }
+                description?.let {
+                    Text(
+                        it,
+                        maxLines = 2,
+                        modifier = Modifier.padding(top = 8.dp),
+                        color = DefaultTextColor
+                    )
+                }
                 Text(
                     text = stringResource(R.string.more_info),
-                    color = colorResource(id = R.color.colorAccent),
+                    color = MaterialTheme.colors.secondaryVariant,
                     fontWeight = FontWeight.Bold,
                     modifier = Modifier
                         .padding(
@@ -134,7 +159,7 @@ fun BottomSheetLayoutContent(beer: Beer) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(start = 15.dp, top = 8.dp, end = 16.dp, bottom = 16.dp)
+                .padding(start = 10.dp, top = 8.dp, end = 16.dp, bottom = 16.dp)
         ) {
             AsyncImage(
                 model = ImageRequest.Builder(LocalContext.current)
@@ -147,17 +172,24 @@ fun BottomSheetLayoutContent(beer: Beer) {
                     .width(142.dp)
                     .aspectRatio(0.66f)
             )
-            Column(modifier = Modifier.padding(start = 16.dp, end = 24.dp)) {
+            Column(modifier = Modifier.padding(start = 10.dp)) {
                 with(beer) {
-                    Text(name)
+                    Text(name, color = Color.White)
                     tagLine?.let {
                         Text(
                             text = it,
                             maxLines = 1,
-                            modifier = Modifier.padding(top = 8.dp, bottom = 8.dp)
+                            modifier = Modifier.padding(top = 8.dp, bottom = 8.dp),
+                            color = DefaultTextColor
                         )
                     }
-                    description?.let { Text(it, modifier = Modifier.padding(top = 8.dp)) }
+                    description?.let {
+                        Text(
+                            it,
+                            modifier = Modifier.padding(top = 8.dp),
+                            DefaultTextColor
+                        )
+                    }
                 }
             }
         }
